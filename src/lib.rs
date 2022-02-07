@@ -68,6 +68,8 @@ pub use device::Device;
 #[doc(inline)]
 pub use device::DeviceWrapper;
 #[doc(inline)]
+pub use device::EnableCodeData;
+#[doc(inline)]
 pub use device::Enable;
 #[doc(inline)]
 pub use device::UninitDevice;
@@ -124,7 +126,7 @@ pub struct DeviceId {
     pub version: u16,
 }
 
-#[derive(Debug)]
+#[derive(Clone, Copy, Debug)]
 /// used by EVIOCGABS/EVIOCSABS ioctls
 pub struct AbsInfo {
     /// latest reported value for the axis
